@@ -1,8 +1,8 @@
 Project Report
 1. Introduction
-This project is designed to construct a “spatio-temporal” image (STI) which can find and characterize video transitions. Six different methods are tried to carry out the construction of STI. The first method is to copy pixels from the middle column (or row) to the STI. In another method, the chromaticity histogram is established for each frame to demonstrate the distribution of color. The next step is to compute intersections between previous histogram and current histogram. In addition, the threshold version of histogram intersections is implemented. The language used in this program is C++ and the main library used is opencv2. 
-2. STI construction
-2.1 Copying pixels
+This project is designed to construct a “spatio-temporal” image (STI) which can find and characterize video transitions. Three different methods are tried to carry out the construction of STI. The first method is to copy pixels from the middle column (or row) to the STI. In another method, the chromaticity histogram is established for each frame to demonstrate the distribution of color. The next step is to compute intersections between previous histogram and current histogram. In addition, the threshold version of histogram intersections is implemented. The language used in this program is C++ and the main library used is opencv2. 
+2. STI Construction Methods
+2.1 Copying Pixels
 The first approach is copying the pixels directly from each frame’s middle column or row to the target STI.
 1. Pseudocode
 1.	For each frame
@@ -11,7 +11,7 @@ The first approach is copying the pixels directly from each frame’s middle col
 4.		Display the STI_C, STI_R
 
 The STI_C has the same number of rows as does the original video frame and the column number equal to the number of frames in the video. The STI_R has the same number of rows as the number of columns in the original video frame and the number of columns equal to the number of frames in the video.
-2.2 Histogram intersection
+2.2 Histogram Intersection
 The second approach is constructing a chromaticity histogram for each column or row of each frame and comparing it to the previous frame’s column at the same location and then adding up the smaller one to the STI.
 1. Pseudocode
 1.	For each frame
@@ -28,7 +28,7 @@ The STI_H has the same number of rows as the number of columns in the original v
 
 
 
-2.3 Histogram intersection with threshold
+2.3 Histogram Intersection with Threshold
 The third approach is based on the second method but added a boundary condition on the intersection value. We set the boundary to be 0.3.
 1. Pseudocode
 1.	For each frame
