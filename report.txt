@@ -40,7 +40,7 @@ The third approach is based on the second method but added a boundary condition 
 
 The STI_HI has the same number of rows as the number of columns in the original video frame and the number of columns equal to the number of frames in the video.
 3. Test result
-The STI_HI has the same number of rows as the number of columns in the original video frame and the number of columns equal to the number of frames in the video. To test the actual performance of each method, we selected a test MPEG video, which has 640*360 pixels per frame. To test the correctness of each test, we added a wipe in the video manually.
+To test the actual performance of each method, a MPEG video with 640*360 pixels per frame is wiped manually and the correcness will be measured.
 3.1 Copying pixels
 Figure (a) is the result of copying pixels from the middle column and Figure (b) is the result of copying pixels from the middle row and side away. From two figures, we find that the widths of two are identical corresponding to the same number of frames. Due to nice quality of video, both column and row copying clearly show the abrupt transition of the video.
 3.2 Histogram intersection
@@ -49,7 +49,7 @@ Figure (c) is the result of doing histogram intersection for each column of each
 Figure (e), (f) and (g) is the result of doing histogram intersection for each column of each frame with threshold holds on 0.3, 0.9 and 0.7 and Figure (h) is the result of doing histogram intersection for each row of each frame with threshold on 0.3. Similarly the widths of these figures are the same as the number of frames. To investigate the relationship between the result and the threshold, we tried different thresholds in the range of [0.01,1]. Comparing the first three figures, we find that threshold around 0.7 has the relative best performance.
 
 3.4 Discussion
-Firstly, the effect of using column or row to construct each STI through different ways depends on the actual direction of transition in video. Secondly, the performance of copying pixels depends on the quality of the video or noisy level. So it is not good enough to find the transition compared to other methods. Thirdly, the threshold version has the best performance but it is crucial to select an appropriate threshold to implementation.
+Three conclusions are generated after discussion. The direction of object transition in video will influence the effect of STI. A column-based STI construction menthod performs better if objects in video move vertically. Video's quality and noise factor will lead to different performance of copying pixels method. With bad quality or big noise factor, STI produced by copying pixels can not show a clear transition of video. The last conclusion is that the threshold version has the best performance but it is crucial to select an appropriate threshold to implementation.
 
 4. Solved problems
 When the program is ran, the control desk always shows the following sentence.  “first frame is no keyframe”
