@@ -40,7 +40,7 @@ The third approach is based on the second method but added a boundary condition 
 
 The STI_HI has the same number of rows as the number of columns in the original video frame and the number of columns equal to the number of frames in the video.
 3. Test result
-The STI_HI has the same number of rows as the number of columns in the original video frame and the number of columns equal to the number of frames in the video. To test the actual performance of each method, we selected a test MPEG video, which has 640*360 pixels per frame. To test the correctness of each test, we added a wipe in the video manually.
+To test the actual performance of each method, a MPEG video with 640*360 pixels per frame is wiped manually and the correcness will be measured.
 3.1 Copying pixels
 Figure (a) is the result of copying pixels from the middle column and Figure (b) is the result of copying pixels from the middle row and side away. From two figures, we find that the widths of two are identical corresponding to the same number of frames. Due to nice quality of video, both column and row copying clearly show the abrupt transition of the video.
 3.2 Histogram intersection
